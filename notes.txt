@@ -1,0 +1,10 @@
+-- dotenv : est une librairie qui permet de creer un environment virtuel 
+afin de cacher nos mots de pass nom d'utilisatuer, etc. 
+Ces données vont etre cachés dans un fichier .env
+
+-- nodemon : va ecouter nos fichier afin d'actualiser à chaque modification.
+Donc on a pas besion de redemarrer à chaque fois le serveur
+
+
+
+

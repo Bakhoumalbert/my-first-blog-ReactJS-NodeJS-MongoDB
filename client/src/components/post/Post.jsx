@@ -1,0 +1,31 @@
+import "./post.css";
+import { Link } from "react-router-dom";
+// import poster_la_mer from "../../assets/lamer.jpg";
+
+export default function Post({ post }) {
+  const PF = "http://localhost:5000/images/";
+  return (
+    <div className="post">
+      {post.photo && (
+        <img className="postImg" src={PF + post.photo} alt="my_post" />
+      )}
+      <div className="postInfo">
+        <div className="postCats">
+          {post.categories.map((c, index) => (
+            <span key={index} className="postCat">
+              {c.name}
+            </span>
+          ))}
+        </div>
+        <Link to={`/posts/${post._id}`} className="link">
+          <span className="postTitle">{post.title}</span>
+        </Link>
+        <hr />
+        <div className="postDate">
+          {new Date(post.createdAt).toDateString()}
+        </div>
+        <p className="postDesc">{post.desc}</p>
+      </div>
+    </div>
+  );
+}
